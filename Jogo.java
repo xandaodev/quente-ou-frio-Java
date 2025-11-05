@@ -11,13 +11,19 @@ public class Jogo{
         this.leitor = new Scanner(System.in);
         System.out.println("\n" + "- Bem vindo ao jogo Quente ou Frio! -");
         System.out.println("\n" + "- Seu objetivo é acertar um número de 1 a 500 -" + "\n");
+        System.out.println("- Você tem 10 tentativas! -" + "\n");
     }
 
     public void iniciar(){
         int palpite = 0;
-        while(palpite!= aleatorio){
+        int tentativas = 10;
+        while(palpite!= aleatorio || tentativas != 0){
             System.out.print("palpite: ");
             palpite = leitor.nextInt();
+            tentativas--;
+            if(tentativas<=0){
+                break;
+            }
             int distancia = palpite - aleatorio;
             if (distancia<0){
                 distancia = distancia *(-1);
@@ -28,6 +34,10 @@ public class Jogo{
                 String dicaRecebida=darDica(distancia);
                 System.out.println(dicaRecebida);
             }
+        }
+        if(tentativas<=0){
+            System.out.println("Suas tentativas acabaram!");
+            return;
         }
         System.out.println("parabens, voce acertou o numero!!!");
         this.leitor.close();
