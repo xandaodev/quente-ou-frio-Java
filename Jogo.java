@@ -2,6 +2,27 @@ import java.util.Scanner;
 import java.util.Random; 
 
 public class Jogo{
+    public static String darDica(int distancia){
+        if(distancia >=400){
+                return "ta congelando!";
+            }else if(distancia >=300){
+                return "ta muito frio!";
+            }else if(distancia >=200){
+                return "ta frio ainda!";
+            }else if(distancia >=100){
+                return "ta começando a esquentar!";
+            }else if(distancia >=50){
+                return "ta morno!";
+            }else if(distancia >=25){
+                return "ta quente!";
+            }else if(distancia >=12){
+                return "ta muito quente!";
+            }else if(distancia >=6){
+                return "ta pelando!";
+            }else{
+                return "Ta fervendo!!!!";
+            }
+    }
     public static void main(String[] args){
         Random gerador = new Random();
         int aleatorio = gerador.nextInt(500) +1;
@@ -17,31 +38,14 @@ public class Jogo{
             if (distancia<0){
                 distancia = distancia *(-1);
             }
-
             if(palpite == aleatorio){
-
-            }else if(distancia >=400){
-                System.out.println("ta congelando!");
-            }else if(distancia >=300){
-                System.out.println("ta muito frio!");
-            }else if(distancia >=200){
-                System.out.println("ta frio ainda!");
-            }else if(distancia >=100){
-                System.out.println("ta começando a esquentar!");
-            }else if(distancia >=50){
-                System.out.println("ta morno!");
-            }else if(distancia >=25){
-                System.out.println("ta quente!");
-            }else if(distancia >=12){
-                System.out.println("ta muito quente!");
-            }else if(distancia >=6){
-                System.out.println("ta pelando!");
+                
             }else{
-                System.out.println("Ta fervendo!!!!");
+                String dicaRecebida=darDica(distancia);
+                System.out.println(dicaRecebida);
             }
-
         }
-        System.out.println("parabens paizao voce acertou o numero!");
+        System.out.println("parabens, voce acertou o numero!!!");
         leitor.close();
     }
 }
