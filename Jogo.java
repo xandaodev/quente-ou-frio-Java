@@ -5,10 +5,10 @@ public class Jogo{
 
     int aleatorio;
     Scanner leitor;
-    public Jogo(){
+    public Jogo(Scanner leitorExterno){
         Random gerador = new Random();
         this.aleatorio = gerador.nextInt(500)+1;
-        this.leitor = new Scanner(System.in);
+        this.leitor = leitorExterno;
         System.out.println("\n" + "- Bem vindo ao jogo Quente ou Frio! -");
         System.out.println("\n" + "- Seu objetivo é acertar um número de 1 a 500 -" + "\n");
         System.out.println("- Você tem 10 tentativas! -" + "\n");
@@ -17,7 +17,7 @@ public class Jogo{
     public void iniciar(){
         int palpite = 0;
         int tentativas = 10;
-        while(palpite!= aleatorio || tentativas != 0){
+        while(palpite!= aleatorio && tentativas > 0){
             System.out.print("palpite: ");
             palpite = leitor.nextInt();
             tentativas--;
@@ -40,7 +40,6 @@ public class Jogo{
             return;
         }
         System.out.println("parabens, voce acertou o numero!!!");
-        this.leitor.close();
     }
     public String darDica(int distancia){
         if(distancia >=400){
@@ -64,8 +63,19 @@ public class Jogo{
             }
     }
     public static void main(String[] args){
-        Jogo meuJogo = new Jogo();
-        meuJogo.iniciar();
+        Scanner leitorPrincipal = new Scanner(System.in);
+        String jogarNovamente = "";
+        do{
+            Jogo meuJogo = new Jogo(leitorPrincipal);
+            meuJogo.iniciar();
+            System.out.println("------------------------------------");
+            System.out.print("Deseja jogar novamente? (s/n): ");
+            jogarNovamente = leitorPrincipal.next();
+        }while(jogarNovamente.equalsIgnoreCase("s"));
+        System.out.println("\n" + "Obrigado por jogar!" + "\n");
+        leitorPrincipal.close();
+        
+
 
     }
 }
