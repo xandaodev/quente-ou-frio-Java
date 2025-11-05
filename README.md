@@ -9,3 +9,24 @@ Como rodar o jogo :
 3. Compile o arquivo Java:
    ```bash
    javac Jogo.java
+
+EXEMPLO DE COMO O JOGO SERÁ NO TERMINAL : 
+
+- Bem vindo ao jogo Quente ou Frio! -
+
+- Seu objetivo é acertar um número de 1 a 500 -
+
+palpite: 300
+ta muito quente!
+palpite: 400
+ta começando a esquentar!
+palpite: 250
+ta quente!
+palpite: 280
+Ta fervendo!!!!
+palpite: 281
+Ta fervendo!!!!
+palpite: 282
+Ta fervendo!!!!
+palpite: 283
+parabens, voce acertou o numero!!!
