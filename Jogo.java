@@ -8,6 +8,20 @@ public class Jogo{
         System.out.println("bem vindo ao jogo quente ou frio!");
         System.err.println("o numero aleatorio é : " + aleatorio);
 
+        Scanner leitor = new Scanner(System.in);
+        int palpite = 0;
+    
+        while(palpite!= aleatorio){
+            palpite = leitor.nextInt();
+            if (palpite == aleatorio){
+                System.out.println("voce acertou o numero!");
+            }else{
+                System.out.println("ta errado paizao tenta de novo ai ");
+            }
+
+        }
+
+
 
     }
 }
