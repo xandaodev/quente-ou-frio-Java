@@ -5,45 +5,51 @@ public class Jogo{
     public static void main(String[] args){
         Random gerador = new Random();
         int aleatorio = gerador.nextInt(500) +1;
-        System.out.println("bem vindo ao jogo quente ou frio!");
-        System.err.println("o numero aleatorio é : " + aleatorio);
+        System.out.println("\n" + "- Bem vindo ao jogo Quente ou Frio! -");
+        System.out.println("\n" + "- Seu objetivo é acertar um número de 1 a 500 -" + "\n");
 
         Scanner leitor = new Scanner(System.in);
         int palpite = 0;
-    
         while(palpite!= aleatorio){
+            System.out.print("palpite: ");
             palpite = leitor.nextInt();
             int distancia = palpite - aleatorio;
             if (distancia<0){
                 distancia = distancia *(-1);
             }
-            if(distancia >400){
+            if(palpite == aleatorio){
+
+            }
+            else if(distancia >=400){
                 System.out.println("ta congelando!");
             }
-            if(distancia >300 && distancia<400){
+            else if(distancia >=300 && distancia<400){
                 System.out.println("ta muito frio!");
             }
-            if(distancia >200 && distancia<300){
+            else if(distancia >=200 && distancia<300){
                 System.out.println("ta frio ainda!");
             }
-            if(distancia >100 && distancia<200){
+            else if(distancia >=100 && distancia<200){
                 System.out.println("ta começando a esquentar!");
             }
-            if(distancia >50 && distancia<100){
+            else if(distancia >=50 && distancia<100){
                 System.out.println("ta morno!");
             }
-            if(distancia >25 && distancia<50){
+            else if(distancia >=25 && distancia<50){
                 System.out.println("ta quente!");
             }
-            if(distancia >12 && distancia<25){
+            else if(distancia >=12 && distancia<25){
                 System.out.println("ta muito quente!");
             }
-            if(distancia >6 && distancia<12){
+            else if(distancia >=6 && distancia<12){
                 System.out.println("ta pelando!");
+            }
+            else if (distancia<=5){
+                System.out.println("Ta fervendo!!!!");
             }
 
         }
-        System.out.println("parabens paizao voce certou o numero!");
+        System.out.println("parabens paizao voce acertou o numero!");
 
         leitor.close();
 
