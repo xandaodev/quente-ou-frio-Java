@@ -17,43 +17,31 @@ public class Jogo{
             if (distancia<0){
                 distancia = distancia *(-1);
             }
+
             if(palpite == aleatorio){
 
-            }
-            else if(distancia >=400){
+            }else if(distancia >=400){
                 System.out.println("ta congelando!");
-            }
-            else if(distancia >=300 && distancia<400){
+            }else if(distancia >=300){
                 System.out.println("ta muito frio!");
-            }
-            else if(distancia >=200 && distancia<300){
+            }else if(distancia >=200){
                 System.out.println("ta frio ainda!");
-            }
-            else if(distancia >=100 && distancia<200){
+            }else if(distancia >=100){
                 System.out.println("ta começando a esquentar!");
-            }
-            else if(distancia >=50 && distancia<100){
+            }else if(distancia >=50){
                 System.out.println("ta morno!");
-            }
-            else if(distancia >=25 && distancia<50){
+            }else if(distancia >=25){
                 System.out.println("ta quente!");
-            }
-            else if(distancia >=12 && distancia<25){
+            }else if(distancia >=12){
                 System.out.println("ta muito quente!");
-            }
-            else if(distancia >=6 && distancia<12){
+            }else if(distancia >=6){
                 System.out.println("ta pelando!");
-            }
-            else if (distancia<=5){
+            }else{
                 System.out.println("Ta fervendo!!!!");
             }
 
         }
         System.out.println("parabens paizao voce acertou o numero!");
-
         leitor.close();
-
-
-
     }
 }
